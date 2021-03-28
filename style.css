@@ -1,0 +1,434 @@
+/* Design général -------------------------------------- */
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+a.anchor {
+	display: block;
+	position: relative;
+	top: -10vh;
+	visibility: hidden;
+}
+
+/* Design typographique -------------------------------- */
+/* Titre */
+h1,h2,h3,h4{
+	font-family: arial;
+}
+
+/* Textes */
+p,a,li{
+	font-family: arial;
+	font-size: 12px;
+}
+
+/* Header ---------------------------------------------- */
+header{
+	width: 100vw;
+	height: 10vh;
+	background-color: #000000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	box-shadow: 0px 0px 10px rgba(0 ,0 ,0 ,0.5);
+	z-index: 9999;
+}
+
+.logoHeader{
+	height: 8vh;
+	margin-left: 1vh;
+}
+
+.menuFantome{
+	width: 100vw;
+	height: 10vh;
+}
+
+label{
+	font-size: 60px;
+	display: none;
+	margin-right: 30px;
+	color: white;
+	margin-top: 10px;
+}
+
+#switch{ 
+	display: none;
+}
+
+nav a:hover{
+	background-color: #656565;
+}
+
+.boutonMenu{
+	color: white;
+	text-decoration: none;
+	margin-right: 80px;
+}
+
+/* HEADER - Media Queries ------- */
+@media (max-width: 700px){
+	nav{
+		display: none;
+		clear: both;
+	}
+
+	label{
+		display: block;
+		float: right;
+	}
+
+	#switch:checked + nav{
+		display: flex;
+		flex-direction: column;
+	}
+
+	header{
+		display: block;
+	}
+
+	.logoHeader{
+		float: left;
+		margin-top: 1vh;
+	}
+
+	nav a{
+		width: 100%;
+		background-color: #292929;
+		display: block;
+		text-align: center;
+		margin-right: 0px;
+		padding: 10px;
+		border-bottom: 2px solid black;
+	}
+}
+
+/* Section 1 ------------------------------------------- */
+.section1{
+	width: 100vw;
+	min-height: 90vh;
+	background-image: url(images/plage-Tokashiki.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #292929;
+}
+
+.blocSection1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: auto;
+}
+
+.grosTitreSection1{
+	width: 25vw;
+	margin-top: 5vh;
+	text-align: center;
+	color: #C1C1C1;	
+}
+
+.titreSection1{
+	font-size: 200px;
+	color: #C1C1C1;
+}
+
+.imageSection1{
+	width: 30vw;
+}
+
+/* SECTION 1 - Media Queries ------- */
+@media (max-width: 700px){
+	.section1{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.titreSection1{
+		font-size: 100px;
+	}
+
+	.grosTitreSection1 {
+    width: 60vw;
+	}
+}
+
+/* Section 2 ------------------------------------------- */
+.section2{
+	width: 100vw;
+	min-height: 90vh;
+	background-color: white;
+	box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.blocSection2{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.texteSection2{
+	margin-top: 2vh;
+	margin-bottom: 5vh;
+}
+
+.dateSection2{
+	width: 20%;
+	text-align: right;
+	font-size: 50px;
+	color: white;
+	background-color: black;
+}
+
+.dateSection2:hover{
+	animation-name: ChangementCouleur;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes ChangementCouleur {
+	0%{background-color: #72b6f6;}
+	50%{background-color: #9cf672;}
+	100%{background-color: #72b6f6;}
+}
+
+.imagesSection2{
+	width: 150px;
+	height: 150px;
+	margin: 20px;
+	border-radius: 50%;
+	border:4px solid black;
+}
+
+.imagesSection2:hover{
+	border-radius: 45%;
+	box-shadow: 0px 0px 10px rgba(0 ,0 ,0 ,0.5);
+	animation-name: Rondeur;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes Rondeur {
+	0%{border-radius: 50%;filter: saturate(0);}
+	100%{border-radius: 0px;filter: saturate(1)}
+}
+
+.texteSection2{
+	width: 20%;
+}
+
+/* SECTION 2 - Media Queries ------- */
+@media (max-width: 700px){
+	.blocSection2{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.dateSection2 {
+    	width: 80%;
+    	text-align: center;
+    	font-size: 50px;
+    	color: white;
+    	background-color: black;
+    	margin-top: 2vh;
+    }
+
+    .texteSection2 {
+    	width: 80%;
+    	margin-top: -1vh;
+	}
+}
+
+/* Section 3 -------------------------------------------*/ 
+.section3{
+	width: 100vw;
+	min-height: 90vh;
+	background-color: #C1C1C1;
+	box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.5);
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+	padding-top: 10px;
+}
+
+.blocSection3{
+	width: 25%;
+	height: 50%;
+	margin: 5%;
+	text-align: center;
+}
+
+.imagesSection3{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 4px solid black;
+}
+
+#haut{
+	align-self: flex-start;
+}
+
+.titreSection3{
+	color: white;
+	background-color: black;
+}
+
+/* SECTION 3 - Media Queries ------- */
+@media (max-width: 700px){
+	.section3{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.blocSection3{
+		width: 80%;
+	}
+
+	#haut{
+		padding-left: 5%;
+	}
+}
+
+/* Section 4 ------------------------------------------- */
+.section4{
+	width: 100vw;
+	min-height: 90vh;
+	background-color: white;
+	box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.blocTexteSection4{
+	display: flex;
+	flex-direction: column;
+}
+
+.titreSection4{
+	margin-left: 5vw;
+	margin-right: 15vw;
+	margin-bottom: 2vh;
+	font-weight: bold;
+	font-size: 60px;
+}
+
+.texteSection4{
+	margin-left: 5vw;
+	margin-right: 15vw;
+	font-size: 20px;
+}
+
+.imageSection4{
+	width: 30%;
+	box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+	margin-left: 2vw;
+}
+
+/* SECTION 4 - Media Queries ------- */
+@media (max-width: 700px){
+	.section4{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.imageSection4{
+		width: 80%;
+		margin-bottom: 2vh;
+		margin-top: 2vh
+	}
+
+	.section4{
+		min-height: 70vh;
+	}
+
+	.titreSection4{
+		font-size: 30px;
+		text-align: center;
+		margin: 5%;
+	}
+
+	.texteSection4{
+		margin-bottom: 5vh;
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 7%;
+		margin-left: 7%;
+		margin-right: 7%;
+	}
+}
+
+/* Section 5 ------------------------------------------- */
+.section5{
+	width: 100vw;
+	min-height: 40vh;
+	background-color: #292929;
+}
+
+.blocSection5{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.iconSection5{
+	margin-top: 3vh;
+	margin-bottom: 3vh;
+	width: 5%;
+	color: white;
+}
+
+.infos{
+	color: white;
+}
+
+/* SECTION 5 - Media Queries ------- */
+@media (max-width: 700px){
+	.iconSection5{
+		width: 20%
+	}
+}
+
+/* Footer ---------------------------------------------- */
+footer{
+	width: 100vw;
+	height: 10vh;
+	background-color: #000000;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 0px 0px 10px rgba(0 ,0 ,0 ,0.5);
+}
+
+.boutonFin{
+	color: white;
+	text-decoration: none;
+	margin: 25px;
+}
+
+.logoFooter{
+	margin-right: 1vw;
+
+	height: 8vh;
+}
+
+
+
+
+
+
